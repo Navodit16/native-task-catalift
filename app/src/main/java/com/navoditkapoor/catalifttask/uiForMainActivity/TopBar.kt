@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,14 +38,23 @@ fun TopBar() {
         },
         actions = {
             Row {
-                IconInCircle(Icons.Default.Person, "Profile")
+                IconButton(onClick = {}) {
+                    IconInCircle(Icons.Default.Person, "Profile")
+                }
                 Spacer(modifier = Modifier.width(16.dp))
-                IconInCircle(Icons.Default.Notifications, "Notifications")
+
+                IconButton(onClick = {}) {
+                    IconInCircle(Icons.Default.Notifications, "Notifications")
+                }
                 Spacer(modifier = Modifier.width(16.dp))
-                IconInCircle(
-                   ImageVector.vectorResource(R.drawable.baseline_chat_24),
-                    contentDescription = "Chat"
-                )
+
+                IconButton(onClick = {}) {
+                    IconInCircle(
+                        ImageVector.vectorResource(R.drawable.baseline_chat_24),
+                        contentDescription = "Chat"
+                    )
+                }
+
                 Spacer(modifier = Modifier.width(16.dp))
             }
         }
