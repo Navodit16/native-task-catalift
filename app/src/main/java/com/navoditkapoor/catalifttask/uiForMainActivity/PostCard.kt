@@ -8,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material3.*
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -164,10 +165,10 @@ fun InteractionBar(
             }
             Text(text = "80 comments", fontWeight = FontWeight.Bold)
         }
-        Divider(
-            color = Color.LightGray,
+        HorizontalDivider(
+            modifier = Modifier.padding(vertical = 8.dp),
             thickness = 1.dp,
-            modifier = Modifier.padding(vertical = 8.dp)
+            color = Color.LightGray
         )
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -180,11 +181,13 @@ fun InteractionBar(
                     tint = if (isLiked) Color.Yellow else MaterialTheme.colorScheme.primary
                 )
             }
-            Divider(
-                color = Color.LightGray,
+            HorizontalDivider(
                 modifier = Modifier
                     .height(24.dp)
-                    .width(1.dp)
+                    .width(1.dp),
+
+                thickness = 1.dp,
+                color = Color.LightGray
             )
             IconButton(onClick = onCommentClick) {
                 Icon(
@@ -193,11 +196,12 @@ fun InteractionBar(
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
-            Divider(
-                color = Color.LightGray,
+            HorizontalDivider(
                 modifier = Modifier
                     .height(24.dp)
-                    .width(1.dp)
+                    .width(1.dp),
+                thickness = 1.dp,
+                color = Color.LightGray
             )
             IconButton(onClick = onShareClick) {
                 Icon(
